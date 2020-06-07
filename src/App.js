@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Recipe from "./Recipe";
 import logo from "./logo.png";
+import MediaQuery from "react-responsive"
+
 
 const App = () => {
 const APP_ID = "58e90476";
@@ -48,14 +50,26 @@ const getSearch = e => {
 //every recipe is stored from recipes gotten above into recipe prop
   return (
     <div className="App">
+
       
-      <form onSubmit={getSearch} className="search-form">
-        <img className="logo" src={logo} alt=""/>
-        <input placeHolder="Find recipe..." className="search-bar" type="text" value={search} onChange={updateSearch}/>
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
+        <form onSubmit={getSearch} className="search-form">
+          <img className="logo" src={logo} alt=""/>
+          <input placeHolder="Find recipe..." className="search-bar" type="text" value={search} onChange={updateSearch}/>
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </form>
+  
+      <MediaQuery query='(min-device-width: 1224px)'>
+        <MediaQuery query='(max-device-width: 1224px)'>
+          <form onSubmit={getSearch} className="search-form">
+            <input placeHolder="Find recipe..." className="search-bar" type="text" value={search} onChange={updateSearch}/>
+            <button className="search-button" type="submit">
+              Search
+            </button>
+          </form>
+        </MediaQuery>
+      </MediaQuery>
       
       <div className="recipes">
       {recipes.map(recipe =>(
