@@ -53,7 +53,7 @@ const getSearch = e => {
 
       
         <form onSubmit={getSearch} className="search-form">
-          <img className="logo" src={logo} alt=""/>
+          
           <input placeHolder="Find recipe..." className="search-bar" type="text" value={search} onChange={updateSearch}/>
           <button className="search-button" type="submit">
             Search
