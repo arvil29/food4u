@@ -60,13 +60,10 @@ const getSearch = e => {
           </button>
         </form>
   
-      <MediaQuery query='(min-device-width: 1224px)'>
-        <MediaQuery query='(max-device-width: 1224px)'>
+      <MediaQuery query='(min-device-width: 768px)'>
+        <MediaQuery query='(max-device-width: 991px)'>
           <form onSubmit={getSearch} className="search-form">
             <input placeHolder="Find recipe..." className="search-bar" type="text" value={search} onChange={updateSearch}/>
-            <button className="search-button" type="submit">
-              Search
-            </button>
           </form>
         </MediaQuery>
       </MediaQuery>
